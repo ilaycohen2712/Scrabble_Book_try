@@ -10,7 +10,6 @@ import java.util.Observable;
 public class HostModel extends Observable implements BookScrabble_Model {
     @Override
     public void tryPlaceWord() {
-
     }
 
     @Override

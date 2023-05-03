@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookscrabbleapp.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookscrabbleapp.HelloController">
    <left>
       <VBox prefHeight="1024.0" prefWidth="485.0" BorderPane.alignment="CENTER">
          <children>
@@ -93,7 +91,7 @@
    <center>
       <Canvas fx:id="gameBoard" height="822.0" onMouseClicked="#init" width="982.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="200.0" />
+            <Insets bottom="200.0" right="10.0" top="10.0" />
          </BorderPane.margin>
          <effect>
             <InnerShadow choke="0.45" height="18.07" radius="11.467500000000001" width="29.8" />
