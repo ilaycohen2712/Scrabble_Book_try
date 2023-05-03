@@ -13,11 +13,11 @@ public class TestPlayer {
             System.out.println("Player setScore failed");
         p.reFillHand(8);
         if (p.getTilesInHand().size() != 8)
-            System.out.println("Player reFillHand failed1");
+            System.out.println("Player reFillHand1 failed");
         List<Tile> playerHand = p.getTilesInHand();
         p.reFillHand(8);
         if (p.getTilesInHand() != playerHand)
-            System.out.println("Player reFillHand failed2");
+            System.out.println("Player reFillHand2 failed");
     }
 
     public void bagTest(){
