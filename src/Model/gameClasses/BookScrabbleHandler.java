@@ -6,7 +6,7 @@ import java.io.*;
 public class BookScrabbleHandler implements ClientHandler {
 
     /**
-     * a Handler to communicate with a client.
+     * a Handler to communicate with a client. The client sends a query or a challenge (Q or C), and the rest of the string is book names and the word to search.
      * @param inFromclient an input stream from the client
      * @param outToClient and output stream to the client
      */
