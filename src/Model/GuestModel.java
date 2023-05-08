@@ -8,18 +8,9 @@ import java.util.List;
 import java.util.Observable;
 
 public class GuestModel extends Observable implements BookScrabble_Model{
-    @Override
-    public void tryPlaceWord() {
-        
-    }
 
     @Override
-    public void challenge() {
-
-    }
-
-    @Override
-    public void passTheTurn() {
+    public void passTheTurn(int playerIndex) {
 
     }
 
@@ -60,11 +51,6 @@ public class GuestModel extends Observable implements BookScrabble_Model{
 
     @Override
     public boolean isGameStarted() {
-        return false;
-    }
-
-    @Override
-    public boolean isGameEnded() {
         return false;
     }
 

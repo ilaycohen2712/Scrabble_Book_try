@@ -1,25 +1,64 @@
 package Model;
 
-import Model.gameClasses.Board;
-import Model.gameClasses.Player;
-import Model.gameClasses.Tile;
+import Model.gameClasses.*;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
+import java.util.Scanner;
 
 public class HostModel extends Observable implements BookScrabble_Model {
-    @Override
-    public void tryPlaceWord() {
+
+    Board board;
+    Tile.Bag bag;
+    DictionaryManager dictionaryManager;
+    ServerSocket hostServer;
+    List<Player> players;
+    public int currentPlayerIndex;
+    boolean isGameEnded;
+
+    private static HostModel model_instance = null;
+
+
+    public static HostModel getInstance(){
+        if(model_instance==null){
+            model_instance = new HostModel();
+        }
+        return model_instance;
+    }
+
+    private HostModel(){
+        Scanner scanner = new Scanner(System.in);
+        int port = scanner.nextInt();
+        try {
+            hostServer = new ServerSocket(port);
+            System.out.println("Server is up and running on port " + port + "...");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        board = Board.getBoard();
+        bag = Tile.Bag.getBag();
+        dictionaryManager = DictionaryManager.get();
+        players = new ArrayList<>();
+        isGameEnded = false;
+        Player player1 = new Player("Player1");
+        players.add(player1);
+        Player player2 = new Player("Player2");
+        players.add(player2);
+        Player player3 = new Player("Player3");
+        players.add(player3);
+        Player player4 = new Player("Player4");
+        players.add(player4);
+        currentPlayerIndex = 0;
 
     }
 
-    @Override
-    public void challenge() {
 
-    }
 
     @Override
-    public void passTheTurn() {
+    public void passTheTurn(int playerIndex) {
 
     }
 
@@ -30,7 +69,7 @@ public class HostModel extends Observable implements BookScrabble_Model {
 
     @Override
     public Board getBoardStatus() {
-        return null;
+        return Board.getBoard();
     }
 
     @Override
@@ -60,11 +99,6 @@ public class HostModel extends Observable implements BookScrabble_Model {
 
     @Override
     public boolean isGameStarted() {
-        return false;
-    }
-
-    @Override
-    public boolean isGameEnded() {
         return false;
     }
 

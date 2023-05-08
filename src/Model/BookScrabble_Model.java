@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface BookScrabble_Model {
     //"Setters"
-    void tryPlaceWord();
-    void challenge();
-    void passTheTurn();
+    void passTheTurn(int playerIndex);
     void setGameFinish();
 
     //"Getters"
@@ -18,7 +16,7 @@ public interface BookScrabble_Model {
     List<Tile> getCurrentPlayerTiles();
     boolean isHost();
     boolean isGameStarted();
-    boolean isGameEnded();
+    //boolean isGameEnded();
     int[] getBagStatus();
     Player getWinner();
 }
