@@ -13,7 +13,7 @@ public class HostModel extends PlayerModel implements Observer {
     HostServer hostServer;
     Board board;
     Tile.Bag bag;
-
+    //test ilayyyy
 
     public HostModel getHost() {
         if (hostModel == null) {
